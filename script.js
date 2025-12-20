@@ -1024,13 +1024,13 @@ function TrigonometrySelectBackToHome() {
 function ArithmeticBackToArithmeticSelect() {
     document.getElementById('arithmetic-screen').style.display = 'none';
     document.getElementById('arithmetic-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function BasicAlgebraBackToAlgebraSelect() {
     document.getElementById('basic-algebra-screen').style.display = 'none';
     document.getElementById('algebra-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function FactorQuadraticsOneRootEasyBackToAlgebraSelect() {
@@ -1042,58 +1042,58 @@ function FactorQuadraticsOneRootEasyBackToAlgebraSelect() {
 function FactorQuadraticsOneRootMediumBackToAlgebraSelect() {
     document.getElementById('FactorQuadraticsOneRootMedium-screen').style.display = 'none';
     document.getElementById('algebra-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function FactorQuadratics2RootsBackToAlgebraSelect() {
     document.getElementById('FactorQuadratics2Roots-screen').style.display = 'none';
     document.getElementById('algebra-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function CompleteTheSquareBackToAlgebraSelect() {
     document.getElementById('CompleteTheSquare-screen').style.display = 'none';
     document.getElementById('algebra-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function DegreesRadiansBackToTrigonometrySelect() {
     document.getElementById('DegreesRadians-screen').style.display = 'none';
     document.getElementById('trigonometry-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
     document.getElementById('teach-box').style.display = 'none'; // Hide the teach box
 }
 
 function DegreesRadiansMediumBackToTrigonometrySelect() {
     document.getElementById('DegreesRadiansMedium-screen').style.display = 'none';
     document.getElementById('trigonometry-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
     document.getElementById('teach-box').style.display = 'none';
 }
 
 function DegreesRadiansHardBackToTrigonometrySelect() {
     document.getElementById('DegreesRadiansHard-screen').style.display = 'none';
     document.getElementById('trigonometry-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
     document.getElementById('teach-box').style.display = 'none';
 }
 
 function UnitCircleQuizBackToTrigonometrySelect() {
     document.getElementById('UnitCircleQuiz-screen').style.display = 'none';
     document.getElementById('trigonometry-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function DoubleAngleIdentitiesEasyBackToTrigonometrySelect() {
     document.getElementById('DoubleAngleIdentitiesEasy-screen').style.display = 'none';
     document.getElementById('trigonometry-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function DoubleAngleIdentitiesMediumBackToTrigonometrySelect() {
     document.getElementById('DoubleAngleIdentitiesMedium-screen').style.display = 'none';
     document.getElementById('trigonometry-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function selectDifficulty(difficulty) {
