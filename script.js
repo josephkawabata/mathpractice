@@ -1036,7 +1036,7 @@ function BasicAlgebraBackToAlgebraSelect() {
 function FactorQuadraticsOneRootEasyBackToAlgebraSelect() {
     document.getElementById('FactorQuadraticsOneRootEasy-screen').style.display = 'none';
     document.getElementById('algebra-select-screen').style.display = 'block';
-    document.getElementById('explanation-box').innerHTML = "Welcome to Math Practice!<br><br> Choose the type of problem you'd like to improve on.";
+    document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
 }
 
 function FactorQuadraticsOneRootMediumBackToAlgebraSelect() {
