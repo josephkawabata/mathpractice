@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Math Practice</title>
-        <!-- <div id="teach-box" class="teach-box">This is a teach box with additional information.</div></-->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="stylesheet" href="styles.css">
@@ -79,13 +78,13 @@
     
         <div id="basic-algebra-screen" class="container" style="display:none;">
             <h1>Solve for x:</h1>
-            <p id="basic-algebra-question" class="question-text">What is 1 + 1?</p> <!-- Changed ID -->
+            <p id="basic-algebra-question" class="question-text">What is 1 + 1?</p> 
             <div class="input-button-wrapper">
                 <input type="text" id="basic-algebra-answer" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
                 <button class="submit-button" onclick="checkBasicAlgebraAnswer()">Submit</button>
             </div>
-            <p id="basic-algebra-result"></p> <!-- Changed ID -->
-            <div><button id="basic-algebra-next-question" style="display:none;" onclick="generateBasicAlgebraQuestion()">Next Question</button></div> <!-- Changed ID -->
+            <p id="basic-algebra-result"></p> 
+            <div><button id="basic-algebra-next-question" style="display:none;" onclick="generateBasicAlgebraQuestion()">Next Question</button></div> 
             <div><button class="back-button" onclick="BasicAlgebraBackToAlgebraSelect()">Back</button></div>
         </div>
         
