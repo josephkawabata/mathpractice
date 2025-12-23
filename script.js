@@ -1,4 +1,3 @@
-// Variables to store the last generated question
 let lastArithmeticQuestion = '';
 let lastBasicAlgebraQuestion = '';
 let lastFactorQuadraticsOneRootEasyQuestion = '';
@@ -10,19 +9,14 @@ let lastDoubleAngleIdentitiesEasyQuestion = '';
 let lastDoubleAngleIdentitiesMediumQuestion = '';
 let lastDegreesRadiansQuestion = '';
 
-// Initialize the flag to track if an answer has been attempted
 window.hasAttemptedAnswer = false;
 
-// Add the global event listener for Cmd+Enter or Ctrl+Enter
 document.addEventListener('keydown', function (event) {
-   // Allow going to the next question only if an answer has been attempted
    if (event.key === 'Enter' && (event.metaKey || event.ctrlKey) && window.hasAttemptedAnswer) {
-       // Click the visible "Next Question" button, if any
        document.querySelector('.next-question-button:visible')?.click();
    }
 });
 
-// Initialize the home screen when the page loads
 window.onload = function() {
     console.log('Page loaded');
     document.getElementById('home-screen').style.display = 'block';
@@ -37,21 +31,21 @@ function getRandomDigitMax3() {
 }
 
 function getRandomDigitMax5PosorNeg() {
-    const digit = Math.floor(Math.random() * 5) + 1; // Get a random digit between 1 and 9
-    const sign = Math.random() < 0.5 ? -1 : 1; // Randomly choose -1 or 1
-    return digit * sign; // Return the digit with a random sign
+    const digit = Math.floor(Math.random() * 5) + 1;
+    const sign = Math.random() < 0.5 ? -1 : 1;
+    return digit * sign;
 }
 
 function getRandomDigitPosorNeg() {
-    const digit = Math.floor(Math.random() * 9) + 1; // Get a random digit between 1 and 9
-    const sign = Math.random() < 0.5 ? -1 : 1; // Randomly choose -1 or 1
-    return digit * sign; // Return the digit with a random sign
+    const digit = Math.floor(Math.random() * 9) + 1;
+    const sign = Math.random() < 0.5 ? -1 : 1;
+    return digit * sign;
 }
 
 function getRandomDigitPosOrNeg2To9() {
-    const digit = Math.floor(Math.random() * 8) + 2; // Generate a random integer between 2 and 9
-    const sign = Math.random() < 0.5 ? -1 : 1; // Randomly choose -1 or 1
-    return digit * sign; // Return the digit with a random sign
+    const digit = Math.floor(Math.random() * 8) + 2;
+    const sign = Math.random() < 0.5 ? -1 : 1;
+    return digit * sign;
 }
 
 function homeToAlgebra() {
@@ -86,17 +80,15 @@ function startArithmetic() {
     document.getElementById('arithmetic-select-screen').style.display = 'none';
     document.getElementById('arithmetic-screen').style.display = 'block';
     document.getElementById('explanation-box').textContent = 'Welcome to kindergarten';
-    document.getElementById('arithmetic-answer').focus(); // Automatically focus the input box
+    document.getElementById('arithmetic-answer').focus(); 
     document.getElementById('arithmetic-answer').onkeydown = function(event) {
         if (event.key === 'Enter') {
             checkArithmeticAnswer();
         }
     };
 
-    // Add this specific event listener for Cmd+Enter or Ctrl+Enter for arithmetic questions
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Enter' && (event.metaKey || event.ctrlKey) && window.hasAttemptedAnswer) {
-            // Only trigger the next question button if the answer has been attempted
             document.getElementById('arithmetic-next-question').click();
         }
     });
@@ -107,11 +99,9 @@ function startArithmetic() {
 function generateArithmeticQuestion() {
     window.hasAttemptedAnswer = false;
     let digit1, digit2, questionText;
-    
     do {
         digit1 = getRandomDigit();
         digit2 = getRandomDigit();
-
         if (window.selectedAttributes.addition && window.selectedAttributes.subtraction) {
             const isAddition = Math.random() < 0.5;
             if (isAddition) {
@@ -139,14 +129,12 @@ function generateArithmeticQuestion() {
             }
         }
     } while (questionText === lastArithmeticQuestion);
-    
     lastArithmeticQuestion = questionText;
-
     document.getElementById('arithmetic-question').textContent = questionText;
     document.getElementById('arithmetic-result').textContent = '';
     document.getElementById('arithmetic-answer').value = '';
     document.getElementById('arithmetic-next-question').style.display = 'none';
-    document.getElementById('arithmetic-answer').focus(); // Automatically focus the input box
+    document.getElementById('arithmetic-answer').focus();
 }
 
 function checkArithmeticAnswer() {
@@ -155,7 +143,7 @@ function checkArithmeticAnswer() {
     document.getElementById('arithmetic-result').textContent = resultText;
     document.getElementById('arithmetic-next-question').style.display = 'inline';
     document.getElementById('arithmetic-answer').blur();
-    window.hasAttemptedAnswer = true; // Set flag to true after checking the answer
+    window.hasAttemptedAnswer = true; 
 }
 
 function startBasicAlgebra() {
@@ -174,7 +162,7 @@ function startBasicAlgebra() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('basic-algebra-next-question').click();
         }
     });
@@ -240,7 +228,7 @@ function startFactorQuadraticsOneRootEasy() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('FactorQuadraticsOneRootEasy-next-question').click();
         }
     });
@@ -293,7 +281,7 @@ function startFactorQuadraticsOneRootMedium() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('FactorQuadraticsOneRootMedium-next-question').click();
         }
     });
@@ -347,7 +335,7 @@ function startFactorQuadratics2Roots() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('FactorQuadratics2Roots-next-question').click();
         }
     });
@@ -413,7 +401,7 @@ function startCompleteTheSquare() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('CompleteTheSquare-next-question').click();
         }
     });
@@ -495,26 +483,21 @@ function startDegreesRadians() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('DegreesRadians-next-question').click();
         }
     });
     selectDifficulty('easy');
     generateDegreesRadiansQuestion();
-    //const teachBox = document.getElementById('teach-box');
-    //teachBox.style.display = 'flex';
-   // teachBox.innerHTML = 'Look up a unit circle if you need help!';
 }
 
 function formatPiSymbol(event) {
-    const input = event.target; // Get the input element that triggered the event
-    const cursorPosition = input.selectionStart; // Remember cursor position
+    const input = event.target; 
+    const cursorPosition = input.selectionStart; 
     const valueBefore = input.value;
 
-    // Only replace "pi" with "π" if it follows a valid numeric input or appears as "pi" on its own
     input.value = input.value.replace(/(\d*)pi/g, '$1π'); 
 
-    // Restore the cursor position after replacing
     const newLength = input.value.length;
     const lengthDifference = newLength - valueBefore.length;
     input.selectionStart = cursorPosition + lengthDifference;
@@ -522,7 +505,6 @@ function formatPiSymbol(event) {
 }
 
 function generateDegreesRadiansQuestion() {
-    // Define the main degrees values and their corresponding radians
     const degreesToRadians = {
         '30': 'π/6',
         '45': 'π/4',
@@ -542,22 +524,18 @@ function generateDegreesRadiansQuestion() {
         '360': '2π'
     };
 
-    // Get a random degree value
     const degreeValues = Object.keys(degreesToRadians);
     let randomDegree;
 
     do {
         randomDegree = degreeValues[Math.floor(Math.random() * degreeValues.length)];
-    } while (randomDegree === lastDegreesRadiansQuestion); // Ensure the new question is different from the last one
+    } while (randomDegree === lastDegreesRadiansQuestion);
 
-    // Update the last question
     lastDegreesRadiansQuestion = randomDegree;
 
-    // Set the question text and the correct answer
     const questionText = `How many radians are ${randomDegree} degrees?`;
     window.currentAnswer = degreesToRadians[randomDegree];
 
-    // Update the UI elements
     document.getElementById('DegreesRadians-question').textContent = questionText;
     document.getElementById('DegreesRadians-result').textContent = '';
     document.getElementById('DegreesRadians-answer').value = '';
@@ -569,11 +547,9 @@ function checkDegreesRadiansAnswer() {
     const userAnswer = document.getElementById('DegreesRadians-answer').value.trim().toLowerCase();
     const correctAnswer = window.currentAnswer.toLowerCase();
 
-    // Convert both answers to comparable formats
     const standardizedUserAnswer = userAnswer.replace(/\s+/g, '').replace('π', 'pi');
     const standardizedCorrectAnswer = correctAnswer.replace('π', 'pi');
 
-    // Use math.js or a custom fraction evaluator to simplify and compare answers
     const isCorrect = standardizedUserAnswer === standardizedCorrectAnswer || evaluateEquivalentFractions(standardizedUserAnswer, standardizedCorrectAnswer);
 
     const resultText = isCorrect ? 'Correct!' : `Nope, the answer is ${window.currentAnswer}.`;
@@ -583,14 +559,11 @@ function checkDegreesRadiansAnswer() {
     document.getElementById('DegreesRadians-answer').blur();
 }
 
-// Function to evaluate equivalent fractions
 function evaluateEquivalentFractions(userAnswer, correctAnswer) {
-    // Check if userAnswer and correctAnswer are fractions and normalize them for comparison
     if (userAnswer.includes('/') && correctAnswer.includes('/')) {
         const [userNumerator, userDenominator] = userAnswer.split('/').map(f => parseFloat(f));
         const [correctNumerator, correctDenominator] = correctAnswer.split('/').map(f => parseFloat(f));
         
-        // Return true if both fractions are equal when cross-multiplied
         return userNumerator * correctDenominator === correctNumerator * userDenominator;
     }
     return false;
@@ -608,18 +581,17 @@ function startDegreesRadiansMedium() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('DegreesRadiansMedium-next-question').click();
         }
     });
-    selectDifficulty('medium'); // Highlight medium button
+    selectDifficulty('medium'); 
     generateDegreesRadiansMediumQuestion();
 }
 
-let isDegreesToRadiansMediumNext = false; // Start with radians for medium questions
+let isDegreesToRadiansMediumNext = false; 
 
 function generateDegreesRadiansMediumQuestion() {
-    // Define degrees and their corresponding radians at 30-degree increments
     const degreesToRadians = {
         '30': 'π/6',
         '60': 'π/3',
@@ -635,35 +607,27 @@ function generateDegreesRadiansMediumQuestion() {
         '360': '2π'
     };
 
-    // Get all degree values
     const degreeValues = Object.keys(degreesToRadians);
     let randomDegree;
 
     do {
-        // Randomly select a degree value
         randomDegree = degreeValues[Math.floor(Math.random() * degreeValues.length)];
-    } while (randomDegree === lastDegreesRadiansQuestion); // Ensure the new question is different from the last one
+    } while (randomDegree === lastDegreesRadiansQuestion);
 
-    // Update the last question
     lastDegreesRadiansQuestion = randomDegree;
 
-    // Set question and answer based on the alternating question type
     let questionText;
     if (isDegreesToRadiansMediumNext) {
         questionText = `How many radians are ${randomDegree} degrees?`;
         window.currentAnswer = degreesToRadians[randomDegree];
     } else {
-        // Find the corresponding degree for a given radian
         const radiansToDegrees = Object.fromEntries(Object.entries(degreesToRadians).map(([deg, rad]) => [rad, deg]));
         const randomRadian = degreesToRadians[randomDegree];
         questionText = `How many degrees are ${randomRadian} radians?`;
         window.currentAnswer = radiansToDegrees[randomRadian];
     }
 
-    // Toggle for next question type
     isDegreesToRadiansMediumNext = !isDegreesToRadiansMediumNext;
-
-    // Update the UI elements for the medium screen
     document.getElementById('DegreesRadiansMedium-question').textContent = questionText;
     document.getElementById('DegreesRadiansMedium-result').textContent = '';
     document.getElementById('DegreesRadiansMedium-answer').value = '';
@@ -674,12 +638,8 @@ function generateDegreesRadiansMediumQuestion() {
 function checkDegreesRadiansMediumAnswer() {
     const userAnswer = document.getElementById('DegreesRadiansMedium-answer').value.trim().toLowerCase();
     const correctAnswer = window.currentAnswer.toLowerCase();
-
-    // Convert both answers to comparable formats
-    const standardizedUserAnswer = userAnswer.replace(/\s+/g, '').replace('π', 'pi'); // Ensure π is converted back to 'pi'
+    const standardizedUserAnswer = userAnswer.replace(/\s+/g, '').replace('π', 'pi');
     const standardizedCorrectAnswer = correctAnswer.replace('π', 'pi');
-
-    // Check if the user's answer is correct in various formats
     const isCorrect =
         standardizedUserAnswer === standardizedCorrectAnswer ||
         evaluateEquivalentFractions(standardizedUserAnswer, standardizedCorrectAnswer) ||
@@ -696,7 +656,7 @@ function startDegreesRadiansHard() {
     document.getElementById('DegreesRadians-screen').style.display = 'none';
     document.getElementById('DegreesRadiansMedium-screen').style.display = 'none';
     document.getElementById('DegreesRadiansHard-screen').style.display = 'block';
-    document.getElementById('difficulty-button').style.display = 'block'; // Show difficulty
+    document.getElementById('difficulty-button').style.display = 'block';
     document.getElementById('explanation-box').innerHTML = "Round to 2 decimal points";
     document.getElementById('DegreesRadiansHard-answer').onkeydown = function(event) {
         if (event.key === 'Enter') {
@@ -704,39 +664,36 @@ function startDegreesRadiansHard() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('DegreesRadiansHard-next-question').click();
         }
     });
     selectDifficulty('hard');
-    generateDegreesRadiansHardQuestion(); // Start generating the hard questions
+    generateDegreesRadiansHardQuestion(); 
 }
 
-let isDegreesToRadiansHardNext = true; // Start with degrees to radians for hard questions
+let isDegreesToRadiansHardNext = true; 
 
 function generateDegreesRadiansHardQuestion() {
     let questionText, randomValue;
 
     do {
         if (isDegreesToRadiansHardNext) {
-            // Generate a random degree value between 0.1 and 720
             randomValue = (Math.random() * (720 - 0.1) + 0.1).toFixed(1);
             questionText = `How many radians are ${randomValue} degrees?`;
-            window.currentAnswer = parseFloat((parseFloat(randomValue) * (Math.PI / 180)).toFixed(2)); // Convert and keep only 2 decimal points
+            window.currentAnswer = parseFloat((parseFloat(randomValue) * (Math.PI / 180)).toFixed(2));
         } else {
-            // Generate a random radian value between 0.1 and 4π, in increments of 0.1
-            const maxRadians = 4 * Math.PI; // Maximum value of 4π
+            const maxRadians = 4 * Math.PI;
             randomValue = (Math.random() * (maxRadians - 0.1) + 0.1);
-            randomValue = (Math.round(randomValue * 10) / 10).toFixed(1); // Round to nearest increment of 0.1
+            randomValue = (Math.round(randomValue * 10) / 10).toFixed(1); 
             questionText = `How many degrees are ${randomValue} radians?`;
-            window.currentAnswer = parseFloat((parseFloat(randomValue) * (180 / Math.PI)).toFixed(2)); // Convert and keep only 2 decimal points
+            window.currentAnswer = parseFloat((parseFloat(randomValue) * (180 / Math.PI)).toFixed(2)); 
         }
-    } while (questionText === lastDegreesRadiansQuestion); // Ensure the new question is different from the last one
+    } while (questionText === lastDegreesRadiansQuestion); 
 
-    // Toggle for next question type
     isDegreesToRadiansHardNext = !isDegreesToRadiansHardNext;
 
-    lastDegreesRadiansQuestion = randomValue; // Store last question
+    lastDegreesRadiansQuestion = randomValue; 
 
     document.getElementById('DegreesRadiansHard-question').textContent = questionText;
     document.getElementById('DegreesRadiansHard-result').textContent = '';
@@ -747,10 +704,9 @@ function generateDegreesRadiansHardQuestion() {
 
 function checkDegreesRadiansHardAnswer() {
     const userAnswer = parseFloat(document.getElementById('DegreesRadiansHard-answer').value.trim());
-    const correctAnswer = parseFloat(window.currentAnswer.toFixed(2)); // Keep only 2 decimal points
+    const correctAnswer = parseFloat(window.currentAnswer.toFixed(2));
 
-    // Allow a small margin of error due to floating-point precision issues
-    const isCorrect = Math.abs(userAnswer - correctAnswer) < 0.01; // Acceptable margin of 0.01
+    const isCorrect = Math.abs(userAnswer - correctAnswer) < 0.01;
 
     const resultText = isCorrect ? 'Correct!' : `Nope, the answer is ${correctAnswer}.`;
     document.getElementById('DegreesRadiansHard-result').textContent = resultText;
@@ -758,14 +714,10 @@ function checkDegreesRadiansHardAnswer() {
     document.getElementById('DegreesRadiansHard-answer').blur();
 }
 
-// New function to compare pi expressions
 function comparePiExpressions(userAnswer, correctAnswer) {
-    // Convert π expressions to numerical approximations
     const pi = Math.PI;
     const userExpression = userAnswer.replace('pi', pi);
     const correctExpression = correctAnswer.replace('pi', pi);
-
-    // Evaluate if the numerical values are close enough
     return Math.abs(eval(userExpression) - eval(correctExpression)) < 0.01;
 }
 
@@ -780,7 +732,7 @@ function startUnitCircleQuiz() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { 
             document.getElementById('UnitCircleQuiz-next-question').click();
         }
     });
@@ -798,8 +750,6 @@ function generateUnitCircleQuizQuestion() {
         const randomTrigFunction = trigFunctions[Math.floor(Math.random() * trigFunctions.length)];
 
         questionText = `What is ${randomTrigFunction}(${randomAngle})?`;
-
-        // Calculate the correct answer based on the angle and trig function
         let correctAnswer;
         if (randomTrigFunction === 'cos') {
             const cosValues = {
@@ -866,8 +816,8 @@ function checkUnitCircleQuizAnswer() {
 }
 
 function startDoubleAngleIdentitiesEasy() {
-    document.getElementById('DoubleAngleIdentitiesMedium-screen').style.display = 'none'; // Hide the medium screen
-    document.getElementById('trigonometry-select-screen').style.display = 'none'; // Hide the medium screen
+    document.getElementById('DoubleAngleIdentitiesMedium-screen').style.display = 'none';
+    document.getElementById('trigonometry-select-screen').style.display = 'none';
     document.getElementById('DoubleAngleIdentitiesEasy-screen').style.display = 'block';
     document.getElementById('difficulty-button').style.display = 'block';
     document.getElementById('explanation-box').innerHTML = "Enter a double angle identity.";
@@ -877,7 +827,7 @@ function startDoubleAngleIdentitiesEasy() {
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
             document.getElementById('DoubleAngleIdentitiesEasy-next-question').click();
         }
     });
@@ -885,7 +835,7 @@ function startDoubleAngleIdentitiesEasy() {
     generateDoubleAngleIdentitiesEasyQuestion();
 }
 
-let easyQuestionIndex = 0; // Initialize index to track the current question
+let easyQuestionIndex = 0; 
 
 function generateDoubleAngleIdentitiesEasyQuestion() {
     const identities = [
@@ -897,7 +847,7 @@ function generateDoubleAngleIdentitiesEasyQuestion() {
     ];
 
     const selectedIdentity = identities[easyQuestionIndex];
-    easyQuestionIndex = (easyQuestionIndex + 1) % identities.length; // Move to the next question in the sequence
+    easyQuestionIndex = (easyQuestionIndex + 1) % identities.length;
 
     window.currentAnswer = selectedIdentity.answer.replace(/\s+/g, '').replace(/\((.*?)\)/g, '$1');
 
@@ -925,14 +875,14 @@ function checkDoubleAngleIdentitiesEasyAnswer() {
 function startDoubleAngleIdentitiesMedium() {
     document.getElementById('DoubleAngleIdentitiesEasy-screen').style.display = 'none';
     document.getElementById('DoubleAngleIdentitiesMedium-screen').style.display = 'block';
-    document.getElementById('difficulty-button').style.display = 'block'; // Show difficulty buttons
+    document.getElementById('difficulty-button').style.display = 'block';
     document.getElementById('DoubleAngleIdentitiesMedium-answer').onkeydown = function(event) {
         if (event.key === 'Enter') {
             checkDoubleAngleIdentitiesMediumAnswer();
         }
     };
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) { // Detect Cmd (Mac) or Ctrl (Windows)
+        if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
             document.getElementById('DoubleAngleIdentitiesMedium-next-question').click();
         }
     });
@@ -940,7 +890,7 @@ function startDoubleAngleIdentitiesMedium() {
     generateDoubleAngleIdentitiesMediumQuestion();
 }
 
-let mediumQuestionIndex = 0; // Initialize index to track the current question
+let mediumQuestionIndex = 0;
 
 function generateDoubleAngleIdentitiesMediumQuestion() {
     const identities = [
@@ -950,7 +900,7 @@ function generateDoubleAngleIdentitiesMediumQuestion() {
     ];
 
     const selectedIdentity = identities[mediumQuestionIndex];
-    mediumQuestionIndex = (mediumQuestionIndex + 1) % identities.length; // Move to the next question in the sequence
+    mediumQuestionIndex = (mediumQuestionIndex + 1) % identities.length;
 
     if (selectedIdentity.answers) {
         window.currentAnswers = selectedIdentity.answers.map(ans => ans.replace(/\s+/g, '').replace(/²/g, '^2').replace(/\((.*?)\)/g, '$1'));
@@ -997,7 +947,7 @@ function checkDoubleAngleIdentitiesMediumAnswer() {
 function startDoubleAngleIdentitiesHard() {
     document.getElementById('DoubleAngleIdentitiesEasy-screen').style.display = 'none';
     document.getElementById('DoubleAngleIdentitiesMedium-screen').style.display = 'block';
-    document.getElementById('difficulty-button').style.display = 'block'; // Show difficulty buttons
+    document.getElementById('difficulty-button').style.display = 'block';
     generateDoubleAngleIdentitiesHardQuestion();
 }
 
@@ -1005,7 +955,6 @@ function generateDoubleAngleIdentitiesHardQuestion() {
    
 }
 
-// Back button section!
 function AlgebraSelectBackToHome() {
     document.getElementById('algebra-select-screen').style.display = 'none';
     document.getElementById('home-screen').style.display = 'block';
@@ -1061,7 +1010,7 @@ function DegreesRadiansBackToTrigonometrySelect() {
     document.getElementById('DegreesRadians-screen').style.display = 'none';
     document.getElementById('trigonometry-select-screen').style.display = 'block';
     document.getElementById('explanation-box').innerHTML = "Welcome!<br><br> Choose the type of problem you'd like to improve on.";
-    document.getElementById('teach-box').style.display = 'none'; // Hide the teach box
+    document.getElementById('teach-box').style.display = 'none';
 }
 
 function DegreesRadiansMediumBackToTrigonometrySelect() {
