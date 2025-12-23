@@ -1,4 +1,3 @@
- /* Global Styles */
 body {
     font-family: Arial, sans-serif;
     font-size: 34px;
@@ -11,48 +10,20 @@ body {
     background: linear-gradient(90deg, #4a4a4a, #2f2f2f, #4a4a4a);
     color: #ffffff;
 }
-/*
-.teach-box {
-    position: relative;
-    right: -550px;
-    top: 160px;
-    transform: translateY(-50%);
 
-    background: linear-gradient(145deg, #fffacd, #ffeb99); /* Soft banana cream gradient 
-    padding: 10px;
-    border: 2px solid #d4a017; /* Warm golden border 
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(212, 160, 23, 0.2); 
-    font-size: 28px;
-    font-weight: 400;
-    color: #4b4b4b; 
-    z-index: 1000; /* Ensure high z-index to be visible 
-    width: 400px;
-    height: 300px;
-    text-align: center;
-    display: none; 
-    justify-content: center; 
-    align-items: center; 
-    font-family: 'Arial', sans-serif; 
-    border-radius: 15px; 
-    letter-spacing: 0.5px;
-    text-shadow: none;
-}
-*/
-
-/* Explanation Box - Banana Cream Gradient Theme */
 .explanation-box {
     position: relative;
     left: -550px;
     top: 160px;
     transform: translateY(-50%);
     
-    background: linear-gradient(145deg, #fffacd, #ffeb99); /* Soft banana cream gradient */
+    background: linear-gradient(145deg, #fffacd, #ffeb99); 
     padding: 10px;
-    border: 2px solid #d4a017; /* Warm golden border */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(212, 160, 23, 0.2); /* Subtle shadow for depth */
+    border: 2px solid #d4a017;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(212, 160, 23, 0.2);
     font-size: 28px;
     font-weight: 400;
-    color: #4b4b4b; /* Dark grey text for readability */
+    color: #4b4b4b;
     z-index: 1000;
     width: 400px;
     height: 300px;
@@ -60,38 +31,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Arial', sans-serif; /* Clean and modern font */
-    border-radius: 15px; /* Smooth rounded corners */
+    font-family: 'Arial', sans-serif; 
+    border-radius: 15px; 
     letter-spacing: 0.5px;
-    text-shadow: none; /* No text shadow for clarity */
+    text-shadow: none; 
 }
 
-/* Container - Banana Cream Gradient Theme */
 .container {
     position: absolute;
-    background: linear-gradient(145deg, #fffacd, #ffeb99); /* Soft banana cream gradient */
+    background: linear-gradient(145deg, #fffacd, #ffeb99); 
     padding: 40px 30px;
-    border-radius: 15px; /* Smooth rounded corners */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Subtle outer shadow */
-    border: 2px solid #d4a017; /* Warm golden border */
-    font-family: 'Arial', sans-serif; /* Clean and modern font */
-    color: #4b4b4b; /* Dark grey text for readability */
+    border-radius: 15px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    border: 2px solid #d4a017; 
+    font-family: 'Arial', sans-serif; 
+    color: #4b4b4b; 
     letter-spacing: 0.5px;
-    text-shadow: none; /* No text shadow for clarity */
+    text-shadow: none; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Heading Styles */
 h1 {
     font-size: 36px;
     margin-top: 0px;
     margin-bottom: 70px;
 }
 
-/* Input Field Styles */
 .input-button-wrapper {
     display: flex;
     align-items: center;
@@ -116,7 +84,6 @@ h1 {
     width: auto;
 }
 
-/* Button Styles */
 button {
     margin-top: 20px;
     padding: 15px 25px;
@@ -134,11 +101,10 @@ button {
     max-width: 200px;
 }
 
-/* Force Subtle Gradient Green Button Styles (Start, Submit, Next Question) */
 .container .start-button,
 .container .submit-button,
 .container button[id*="next-question"] {
-    background: linear-gradient(145deg, #4CAF50, #388E3C, #2E7D32) !important; /* Pronounced green gradient */
+    background: linear-gradient(145deg, #4CAF50, #388E3C, #2E7D32) !important;
     border: 2px solid #2E7D32 !important;
     color: #ffffff !important;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3) !important;
@@ -149,7 +115,7 @@ button {
 .container .start-button:hover,
 .container .submit-button:hover,
 .container button[id*="next-question"]:hover {
-    background: linear-gradient(145deg, #43A047, #388E3C, #2E7D32) !important; /* Subtle gradient change on hover */
+    background: linear-gradient(145deg, #43A047, #388E3C, #2E7D32) !important; 
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4) !important;
 }
@@ -161,7 +127,6 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Force Back Button - Red Style */
 .container .back-button {
     background: linear-gradient(145deg, #8d4e4e, #a65f5f) !important;
     border: 2px solid #8d4e4e !important;
@@ -188,14 +153,12 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Ensure this rule is applied last */
 button.back-button {
     background: linear-gradient(145deg, #8d4e4e, #a65f5f) !important;
     border: 2px solid #8d4e4e !important;
     color: #ffffff !important;
 }
 
-/* Difficulty Buttons */
 #difficulty-button {
     display: flex;
     justify-content: center;
@@ -208,7 +171,6 @@ button.back-button {
     transform: translateX(-50%);
 }
 
-/* Selected Difficulty Button */
 .button-selected {
     background: linear-gradient(145deg, #3a8bff, #61b0ff) !important;
     border: 2px solid #3a8bff !important;
@@ -226,14 +188,12 @@ button:not(.button-selected):hover {
     background: #61b0ff;
 }
 
-/* Result Text */
 #result {
     margin-top: 30px;
     font-size: 28px;
     font-weight: bold;
 }
 
-/* Button Container */
 .button-container {
     margin: -20px 0;
     width: 100%;
@@ -242,7 +202,6 @@ button:not(.button-selected):hover {
     margin-bottom: 10px;
 }
 
-/* Adjust Button Spacing in Select Screens */
 a, .button-container button {
     margin: 5px 0;
     padding: 15px 20px;
@@ -250,7 +209,6 @@ a, .button-container button {
     width: 500%;
 }
 
-/* Adjust button styling for the home screen */
 #home-screen a {
     margin: 10px 0;
     padding: 15px 20px;
@@ -260,31 +218,28 @@ a, .button-container button {
     text-align: center;
 }
 
-/* Clickable Text Links - Subtle Background-Matching Theme with Darker Yellow Borders and Blue Hover */
 a {
-    color: #3366FF; /* Dark grey text for readability */
+    color: #3366FF; 
     font-size: 26px;
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
     display: block;
-    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    font-family: 'Arial', sans-serif; 
     text-align: center;
     padding: 15px 20px;
     margin: 10px 0;
-    border-radius: 8px; /* Smooth rounded corners */
-    background: linear-gradient(145deg, #fffacd, #ffeb99); /* Banana cream gradient to match background */
-    border: 2px solid #d4a017; /* Darker yellow border */
+    border-radius: 8px; 
+    background: linear-gradient(145deg, #fffacd, #ffeb99);
+    border: 2px solid #d4a017; 
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle inner shadow for depth */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover Effect for Clickable Text Links */
 a:hover {
-    text-decoration: underline; /* Underline the text on hover */
+    text-decoration: underline; 
 }
 
-/* Question Text - Plain White, No Glow */
 .question-text, p {
     color: black;
     text-shadow: none;
